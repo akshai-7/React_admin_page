@@ -31,7 +31,7 @@ const Widget = ({ type }) => {
         case "earning":
             data = {
                 title: "EARNINGS",
-                isMney: true,
+                isMoney: true,
                 link: "View net  earnings",
                 icon: <MonetizationOnOutlinedIcon className="icon"  style={{color:"green",backgroundColor:"rgba(0,128,0,0.2)"}}/>,
             };
