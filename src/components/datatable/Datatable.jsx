@@ -21,7 +21,7 @@ const Datatable = () => {
         columns={userColumns.concat(actionColumn)}
         initialState={{
           pagination: {
-            paginationModel: { page: 0, pageSize: 5 },
+            paginationModel: { page: 0, pageSize: 9 },
           },
         }}
         pageSizeOptions={[5, 10]}
