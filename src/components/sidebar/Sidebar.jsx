@@ -11,12 +11,18 @@ import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
 import StoreIcon from '@mui/icons-material/Store';
+import { Link } from "react-router-dom";
+import DarkModeContext from "../../context/darkModeContext";
+import { useContext } from "react";
 
 const Sidebar = () => {
+    const { dispatch } = useContext(DarkModeContext);
   return (
     <div className="sidebar">
-        <div className="top">
-            <span className="logo">Lamadmin</span>
+          <div className="top">   
+              <Link to="/" style={{textDecoration:"none"}}>
+                   <span className="logo">Lamadmin</span>
+              </Link>
         </div>
         <hr />
         
@@ -27,12 +33,17 @@ const Sidebar = () => {
                       <span>Dasboard</span>
                 </li>  
                 <p className="title">LISTS</p>
+                <Link to="/users" style={{textDecoration:"none"}}>
                 <li><PersonOutlineOutlinedIcon className="icon" />
                       <span>Users</span>
-                </li>  
+                </li> 
+                </Link> 
+                <Link to="/products" style={{textDecoration:"none"}}>
                 <li><StoreIcon className="icon"/>
                     <span>Products</span>
-                </li>  
+                </li>
+                </Link>
+                  
                 <li><CreditCardIcon className="icon"/>
                     <span>Orders</span>
                 </li>  
@@ -66,8 +77,8 @@ const Sidebar = () => {
             </ul> 
         </div>
           <div className="bottom">
-              <div className="colorOption"></div>
-              <div className="colorOption"></div>
+              <div className="colorOption" onClick={() => dispatch({type:"LIGHT"})}></div>
+              <div className="colorOption" onClick={() => dispatch({type:"DARK"})}></div>
         </div>
     </div> 
   )
